@@ -1,0 +1,61 @@
+.marketPage {
+    margin-top: 32px;
+
+    &__title {
+        margin-bottom: 32px;
+
+        @include tablet_small {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__filters {
+        display: flex;
+
+        @include tablet_small {
+            flex-direction: column;
+        }
+
+        .dropdownFilter {
+            margin-right: 24px;
+
+            &:last-child {
+                margin-right: 0;
+                
+                @include tablet_small {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include tablet_small {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 48px;
+        grid-row-gap: 40px;
+
+        @include desktop_large {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include desktop_small {
+            grid-column-gap: 24px;
+            grid-row-gap: 20px;
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mobile_middle {
+            grid-template-columns: 1fr;
+        }
+    }
+}

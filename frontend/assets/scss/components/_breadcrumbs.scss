@@ -1,0 +1,19 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+
+        .breadcrumbs__link {
+            color: $gray;
+            line-height: 16px;
+        }
+
+        &:last-child {
+
+            .breadcrumbs__link {
+                color: $black;
+            }
+        }
+    }
+}
