@@ -1,0 +1,28 @@
+@@include('./components/_header.html', {'title': 'Главная'})
+<main class="main">
+    <div class="wrapper">
+        <div class="container">
+            @@include('./components/_breadcrumbs.html')
+            <section class="marketPage">
+                <h1 class="marketPage__title title">
+                    Комплекты стеллажных систем
+                </h1>
+                <div class="marketPage__filters">
+                    @@include('./components/_dropdown-filter.html', {'title': 'Сортировать по:'})
+                    @@include('./components/_dropdown-filter.html', {'title': 'Материал'})
+                </div>
+                <div class="marketPage__products">
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                    @@include('./components/_product-item.html')
+                </div>
+            </section>
+        </div>
+    </div>
+
+</main>
+@@include('./components/_footer.html')
