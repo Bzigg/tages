@@ -20,17 +20,19 @@ export const state = () => ({
               "name": "Цена по убыванию"
             }
         ]
-    }
+    },
+    material: null,
+    likedIds: []
 })
 
 export const mutations = {
-
+    addMaterial (state, material) {
+        state.material = material
+    }
 }
 
-export const actions = {}
+export const actions = {
+}
 
 export const getters = {
-    $state: (state) => {
-        return state;
-    }
 }

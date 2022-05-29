@@ -14,12 +14,13 @@
             <DropdownFilterVue
               :name="'Материал'"
               :defaultText="'Выберите материал'"
+              :mutationName="'addMaterial'"
               :filterData="$store.state.dict.materials"
             />
           </div>
           <div class="marketPage__products">
             <ProductItem
-                v-for="(productItem, key) in products"
+                v-for="(productItem, key) in $store.state.material ? products.filter(item => item.material === $store.state.material) : products"
                 :key="key"
                 :productItem="productItem"
             />

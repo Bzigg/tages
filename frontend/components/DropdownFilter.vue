@@ -1,11 +1,10 @@
 <template>
     <div class="dropdownFilter">
         <div class="dropdownFilter__name">{{ name }}</div>
-            <!-- v-for="(filter, key) in $store.state.dict.materials"
-            :key="key" -->
         <Select
             :defaultText="defaultText"
             :selectData="filterData"
+            @selectedItem="selectedItem"
         />
     </div>
 </template>
@@ -16,6 +15,11 @@ import Select from './helpers/Select.vue'
 export default {
     components: { Select },
     name: "DropdownFilter",
+    methods: {
+        selectedItem(item) {
+            this.$store.commit(this.mutationName, Number(item.id));
+        }
+    },
     props: {
         name: {
             type: String,
@@ -23,6 +27,11 @@ export default {
         },
         defaultText: {
             type: String,
+            default: null
+        },
+        mutationName: {
+            type: String,
+            require: true,
             default: null
         },
         filterData: {

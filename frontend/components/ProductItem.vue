@@ -6,7 +6,7 @@
         >
             Скидка
         </div>
-        <img class="productItem__photo" src="images/pic1.png" alt="pic1.png" />
+        <img class="productItem__photo" :src="productItem.image.url" :alt="productItem.name" />
         <div class="productItem__info">
         <div class="productItem__infoCode">{{ productItem.code }}</div>
         <div class="productItem__infoName">{{ productItem.name }}</div>
