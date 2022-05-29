@@ -23,9 +23,6 @@
                 :key="key"
                 :productItem="productItem"
             />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
           </div>
         </section>
       </div>
