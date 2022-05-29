@@ -1,0 +1,27 @@
+<template>
+    <ul class="breadcrumbs">
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Главная</a>
+        </li>
+        <li>&nbsp;/&nbsp;</li>
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Системы хранения</a>
+        </li>
+        <li>&nbsp;/&nbsp;</li>
+        <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#"
+            >Комплекты стеллажных систем</a
+            >
+        </li>
+    </ul>
+</template>
+
+<script>
+export default {
+    name: 'Breadcrumbs',
+}
+</script>
+
+<style>
+
+</style>
