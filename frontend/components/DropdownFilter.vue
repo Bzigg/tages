@@ -17,7 +17,8 @@ export default {
     name: "DropdownFilter",
     methods: {
         selectedItem(item) {
-            this.$store.commit(this.mutationName, Number(item.id));
+            this.$store.commit(this.mutationName, item.id);
+            this.$emit('update');
         }
     },
     props: {
