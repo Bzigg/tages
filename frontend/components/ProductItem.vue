@@ -17,7 +17,7 @@
             class="productItem__infoPrice_old"
             v-if="productItem.price.old_price"
           >
-            {{ productItem.price.old_price }}₽
+            {{ priceFormating(productItem.price.old_price) }}₽
           </div>
           <div class="productItem__infoPrice_current">
             {{ priceFormating(productItem.price.current_price) }}₽

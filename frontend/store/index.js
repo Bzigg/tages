@@ -1,5 +1,6 @@
 export const state = () => ({
     dict: {
+        // Словарь materials запрашивать с бэка
         materials: [
             {
               "id": "1",

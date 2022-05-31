@@ -1,5 +1,4 @@
 <template>
-  <main class="main">
     <div class="wrapper">
       <div class="container">
         <Breadcrumbs />
@@ -31,7 +30,6 @@
         </section>
       </div>
     </div>
-  </main>
 </template>
 
 <script>
@@ -44,6 +42,7 @@ export default {
     name: "IndexPage",
     data() {
         return {
+            // Массив products запрашивать с бэка
             products: [
                 {
                     id: "1",
@@ -157,18 +156,16 @@ export default {
         this.productsFiltred = this.getProducts(this.$store.state.material, this.$store.state.price);
     },
     beforeMount() {
-        let likes = JSON.parse(localStorage.getItem('likes'));
-        if (likes?.length) {
-            for(let like of likes) {
-                this.$store.commit('liked', like);
+        this.getFromLocalStorage([
+            {
+                storageName: 'likes',
+                mutationName: 'liked'
+            },
+            {
+                storageName: 'basket',
+                mutationName: 'toggleBasket'
             }
-        }
-        let basket = JSON.parse(localStorage.getItem('basket'));
-        if (basket?.length) {
-            for(let item of basket) {
-                this.$store.commit('toggleBasket', item);
-            }
-        }
+        ]);
     },
     methods: {
         getProducts(materialFilter, priceSort) {
@@ -192,6 +189,16 @@ export default {
         },
         updateMarket () {
             this.productsFiltred = this.getProducts(this.$store.state.material, this.$store.state.price);
+        },
+        getFromLocalStorage (storageItems) {
+            for (let storageItem of storageItems) {
+                const storageData = JSON.parse(localStorage.getItem(storageItem.storageName));
+                if (storageData?.length) {
+                    for(let item of storageData) {
+                        this.$store.commit(storageItem.mutationName, item);
+                    }
+                }
+            }
         }
     },
 };
